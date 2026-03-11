@@ -1,0 +1,64 @@
+*{
+    box-sizing: border-box;
+}
+
+
+h1{
+    
+    text-align: center;
+    border: 3px solid rgb(209, 186, 31);
+    background-color: green;
+    padding: 13px;
+    font-size: medium;
+    color: black;
+    width: 100%;
+    
+}
+
+footer{
+    background-color: green;
+    clear:both;
+    text-align: center;
+    border: 3px solid rgb(209, 186, 31);
+    width: 100%;  /* ADD THIS */
+    box-sizing: border-box;
+}
+
+.special{
+    color: green;
+}
+
+body{
+    background-color: white;
+    margin: 0;
+
+}
+
+.container{
+    display: flex;
+    width: 100%;  
+    box-sizing: border-box;
+    
+}
+
+.sidebarA{
+    background-color: rgb(18, 100, 18);
+    width: 25%;
+    padding: 10px;
+    border: 3px solid rgb(209, 186, 31);
+}
+
+.sidebarB{
+    background-color: rgba(31, 104, 5, 0.641);
+    width: 25%;
+    padding: 10px;
+    border: 3px solid rgb(209, 186, 31);
+}
+
+main{
+    width: 50%;
+    padding: 10px;
+    color: black;
+}
+
+
