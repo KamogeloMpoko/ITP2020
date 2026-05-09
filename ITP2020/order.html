@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order & Inquiries</title>
+    <link rel="stylesheet" href="formStyles.css">
+</head>
+<body>
+
+    <div class="form-container">
+<form action="https://formspree.io/f/xeeneqbk" method="POST" enctype="multipart/form-data">
+  <h2>Bakery Orders & Inquiries</h2>
+
+  <!-- Customer Info -->
+  <label>Full Name:</label>
+  <input type="text" name="full_name" required>
+
+  <label>Phone Number (WhatsApp):</label>
+  <input type="tel" name="phone" required>
+
+  <label>Email:</label>
+  <input type="email" name="email">
+
+  <!-- Order Type -->
+  <label>Order Type:</label>
+  <select name="order_type" required>
+    <option value="">Select</option>
+    <option value="Order">Order</option>
+    <option value="Inquiry">Inquiry</option>
+  </select>
+
+<label>What would you like?</label>
+<select name="order_category" required>
+  <option value="">Select</option>
+  <option value="Menu Item">From Menu</option>
+  <option value="Custom Cake">Custom Cake</option>
+  <option value="Catering">Catering Service</option>
+  <option value="Other">Other</option>
+</select>  
+
+  <!-- Item -->
+  <label>Item/ Service Type:</label>
+  <select name="item_type" required>
+    <option value="">Select</option>
+    <option value="Cake">Cake</option>
+    <option value="Cupcakes">Cupcakes</option>
+    <option value="Cookies">Cookies</option>
+    <option value="Catering">Catering</option>
+    <option value="Other">Other</option>
+  </select>
+
+<label>Selected Item (if any):</label>
+<input type="text" name="selected_item" placeholder="e.g. Chocolate Cake">
+
+  <label>Flavour(s):</label>
+  <input type="text" name="flavour" required>
+
+  <label>Quantity:</label>
+  <input type="number" name="quantity" required>
+
+  <!-- Customisation -->
+  <label>Occasion / Theme:</label>
+  <input type="text" name="occasion">
+
+  <label>Colours:</label>
+  <input type="text" name="colours">
+
+  <label>Message on Cake:</label>
+  <input type="text" name="cake_message">
+
+  <label>Design Description:</label>
+  <textarea name="design_details"></textarea>
+
+  <label>Upload Inspiration Image:</label>
+<input type="file" name="reference_image" accept="image/*">
+
+  <!-- Delivery -->
+  <label>Delivery or Collection:</label>
+  <select name="delivery_method" required>
+    <option value="">Select</option>
+    <option value="Collection">Collection</option>
+    <option value="Delivery">Delivery</option>
+  </select>
+
+  <label>Delivery Address:</label>
+  <textarea name="address"></textarea>
+
+  <label>Date Needed:</label>
+  <input type="date" name="date_needed" required>
+
+  <label>Time:</label>
+  <input type="time" name="time_needed">
+
+  <!-- Payment -->
+  <label>Payment Method:</label>
+  <select name="payment_method">
+    <option value="Cash">Cash</option>
+    <option value="EFT">EFT</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <!-- Notes -->
+  <label>Additional Notes:</label>
+  <textarea name="notes"></textarea>
+
+  <br><br>
+  <button type="submit">Submit Order</button>
+
+
+<!--Cart-->
+<input type="text" name="selected_item">
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const item = params.get("item");
+
+  if (item) {
+    const input = document.querySelector('input[name="selected_item"]');
+    if (input) {
+      input.value = item;
+    }
+  }
+</script>
+
+</form>
+</div>
+</body>
+</html>

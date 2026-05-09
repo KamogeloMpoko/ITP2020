@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Checkout</title>
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="formStyles.css">
+</head>
+<body>
+
+<div class="checkout-container">
+
+  <div class="checkout-header">
+    <h1><i class="ri-shopping-cart-2-line"></i> Cart Checkout</h1>
+    <p>Complete your order below 💙</p>
+  </div>
+
+  <form action="https://formspree.io/f/xeeneqbk" method="POST">
+
+    <!-- Selected Product -->
+    <div class="form-section">
+      <h2>Selected Item</h2>
+
+      <label>Product</label>
+      <input type="text" name="selected_item" id="selectedItem" readonly>
+
+      <label>Quantity</label>
+      <input type="number" name="quantity" value="1" min="1" required>
+    </div>
+
+    <!-- Customer Info -->
+    <div class="form-section">
+      <h2>Customer Information</h2>
+
+      <label>Full Name</label>
+      <input type="text" name="full_name" required>
+
+      <label>Phone Number</label>
+      <input type="tel" name="phone" required>
+
+      <label>Email Address</label>
+      <input type="email" name="email">
+    </div>
+
+    <!-- Delivery -->
+    <div class="form-section">
+      <h2>Delivery Details</h2>
+
+      <label>Delivery Method</label>
+      <select name="delivery_method" required>
+        <option value="">Select</option>
+        <option value="Collection">Collection</option>
+        <option value="Delivery">Delivery</option>
+      </select>
+
+      <label>Delivery Address</label>
+      <textarea name="address" placeholder="Enter address if delivery is selected"></textarea>
+
+      <label>Date Needed</label>
+      <input type="date" name="date_needed" required>
+
+      <label>Preferred Time</label>
+      <input type="time" name="time_needed">
+    </div> 
+
+     <!-- Payment -->
+    <div class="form-section">
+      <h2>Payment</h2>
+
+      <label>Payment Method</label>
+      <select name="payment_method">
+        <option value="Cash">Cash</option>
+        <option value="EFT">EFT</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <!-- Notes -->
+    <div class="form-section">
+      <h2>Additional Notes</h2>
+
+      <textarea name="notes" placeholder="Add extra details here..."></textarea>
+    </div>
+
+    <button type="submit" class="checkout-btn">
+      Submit Order <i class="ri-send-plane-line"></i>
+    </button>
+
+  </form>
+</div>
+
+<!-- Auto-fill selected item -->
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const item = params.get("item");
+
+  if (item) {
+    document.getElementById("selectedItem").value = item;
+  }
+</script>
+
+</body>
+</html>
